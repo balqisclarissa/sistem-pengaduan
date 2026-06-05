@@ -1,21 +1,20 @@
-if(isset($_POST['submit'])){
+<?php
+session_start();
+include '../config/koneksi.php';
 
-$status = $_POST['status'];
+if (isset($_POST['id_pengaduan']) && isset($_POST['status'])) {
 
-if(empty($status)){
+    $id_pengaduan = $_POST['id_pengaduan'];
+    $status = $_POST['status'];
 
-    echo "<script>
-        alert('Pilih status');
-    </script>";
+    $update = mysqli_query(
+        $conn,
+        "UPDATE pengaduan
+         SET status='$status'
+         WHERE id_pengaduan='$id_pengaduan'"
+    );
 
-} else {
-
-    $update = mysqli_query($conn,
-    "UPDATE pengaduan
-    SET status='$status'
-    WHERE id_pengaduan='$id'");
-
-    if($update){
+    if ($update) {
 
         echo "<script>
             alert('Status berhasil diubah');
@@ -26,8 +25,15 @@ if(empty($status)){
 
         echo "<script>
             alert('Status gagal diubah');
+            window.location.href='index.php';
         </script>";
 
     }
+
+} else {
+
+    header("Location: index.php");
+    exit;
+
 }
-}
+?>

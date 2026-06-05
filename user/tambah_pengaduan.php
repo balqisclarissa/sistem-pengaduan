@@ -9,7 +9,7 @@
 
     if (isset($_POST['submit'])) {
         $id_user = $_SESSION['id_user'];
-        $isi = $_POST['isi_pengaduan'];
+        $isi_pengaduan = $_POST['isi_pengaduan'];
 
         $query = mysqli_query ($conn, "INSERT INTO pengaduan (id_user, isi_pengaduan) VALUES ('$id_user', '$isi_pengaduan')");
 

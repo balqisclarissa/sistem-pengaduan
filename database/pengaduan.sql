@@ -19,4 +19,6 @@ CREATE TABLE pengaduan(
     REFERENCES user(id_user)
 );
 
+ALTER TABLE pengaduan add tanggapan TEXT;
+
 INSERT INTO user (email, password, nama_lengkap, telp, role) VALUES ('admin@gmail.com', '$2y$10$BcnuQqHHV.CjhnTxJc8jburc3GtR.SlNf.aG5o.gXEkOYOTuhd7KO', 'Admin', '08122345678', 'admin');
