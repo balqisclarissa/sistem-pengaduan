@@ -32,6 +32,7 @@ $pengaduan = mysqli_query(
     <table border="1" cellpadding="10">
         <tr>
             <th>Isi Pengaduan</th>
+            <th>Edit Pengaduan</th>
             <th>Tanggal Pengaduan</th>
             <th>Status</th>
             <th>Tanggapan</th>
@@ -43,6 +44,11 @@ $pengaduan = mysqli_query(
             while ($data = mysqli_fetch_assoc($pengaduan)) {
                 echo "<tr>";
                 echo "<td>".$data['isi_pengaduan']."</td>";
+                echo "<td>
+                        <a href='edit.php?id=".$data['id_pengaduan']."'>
+                            <button>Edit</button>   
+                        </a>
+                      </td>";
                 echo "<td>".$data['tanggal']."</td>";
                 echo "<td>".$data['status']."</td>";
                 echo "<td>".$data['tanggapan']."</td>";
