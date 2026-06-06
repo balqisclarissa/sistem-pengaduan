@@ -8,7 +8,6 @@ $pengaduan = mysqli_query($conn, "SELECT * FROM pengaduan");
 <table border="1" cellpadding="10">
 
     <tr>
-        <th>ID</th>
         <th>Nama Pelapor</th>
         <th>Isi Pengaduan</th>
         <th>Status</th>
@@ -28,8 +27,6 @@ $pengaduan = mysqli_query($conn, "SELECT * FROM pengaduan");
     ?>
 
     <tr>
-
-        <td><?= $data['id_pengaduan']; ?></td>
         <td><?= $data_user['nama_lengkap']; ?></td>
         <td><?= $data['isi_pengaduan']; ?></td>
         <td>
@@ -64,7 +61,7 @@ $pengaduan = mysqli_query($conn, "SELECT * FROM pengaduan");
         
         <td>
             <a href="tanggapan.php?id=<?= $data['id_pengaduan']; ?>">
-                Tambah Tanggapan
+                Tambah / Edit Tanggapan
             </a>
 
             |

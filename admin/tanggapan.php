@@ -42,8 +42,9 @@ if(isset($_POST['submit'])) {
 
     <form method="POST">
         <label>Tanggapan:</label><br><br>
-        <textarea name="tanggapan" placeholder="Masukkan Tanggapan" rows="5" cols="50" required></textarea><br><br>
+        <textarea name="tanggapan" placeholder="Masukkan / Edit Tanggapan" rows="5" cols="50" required><?= htmlspecialchars($pengaduan['tanggapan'] ?? ''); ?></textarea><br><br>
         <button type="submit" name="submit">Simpan Tanggapan</button>
     </form>
+    <button onclick="window.location.href='index.php'">Kembali</button>
 </body>
 </html>

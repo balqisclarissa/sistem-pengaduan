@@ -2,7 +2,6 @@
 session_start();
 include '../config/koneksi.php';
 
-// Cek apakah user sudah login
 if (!isset($_SESSION['id_user'])) {
     header("Location: ../auth/login.php");
     exit;
@@ -52,6 +51,11 @@ $pengaduan = mysqli_query(
                 echo "<td>".$data['tanggal']."</td>";
                 echo "<td>".$data['status']."</td>";
                 echo "<td>".$data['tanggapan']."</td>";
+                echo "<td>
+                        <a href='hapus_pengaduan.php?id=".$data['id_pengaduan']."' onclick='return confirm(\"Anda yakin ingin menghapus pengaduan ini?\")'>
+                            <button>Hapus</button>   
+                        </a>
+                      </td>";
                 echo "</tr>";
             }
 
