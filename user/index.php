@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Validasi Sesi
 if (!isset($_SESSION['login'])) {
     header("Location: ../auth/login.php");
     exit;

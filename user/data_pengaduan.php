@@ -57,13 +57,12 @@ $pengaduan = mysqli_query(
                             if (mysqli_num_rows($pengaduan) > 0) {
                                 while ($data = mysqli_fetch_assoc($pengaduan)) {
                                     echo "<tr>";
-                                    // Data Kolom
+
                                     echo "<td class='px-4'>" . $data['tanggal'] . "</td>";
                                     echo "<td class='px-4'>" . $data['isi_pengaduan'] . "</td>";
                                     echo "<td class='px-4'><span class='badge bg-info text-dark'>" . $data['status'] . "</span></td>";
                                     echo "<td class='px-4'>" . ($data['tanggapan'] ? $data['tanggapan'] : '<em>Belum ditanggapi</em>') . "</td>";
 
-                                    // Kolom Aksi (Tombol Edit & Hapus digabung)
                                     echo "<td class='px-4 text-center'>
                                             <a href='edit.php?id=" . $data['id_pengaduan'] . "' class='btn btn-warning btn-sm me-1'>Edit</a>
                                             <a href='hapus_pengaduan.php?id=" . $data['id_pengaduan'] . "' class='btn btn-danger btn-sm' onclick='return confirm(\"Anda yakin ingin menghapus pengaduan ini?\")'>Hapus</a>
@@ -71,7 +70,7 @@ $pengaduan = mysqli_query(
                                     echo "</tr>";
                                 }
                             } else {
-                                // Colspan diperbaiki menjadi 5 sesuai jumlah header
+
                                 echo "<tr>";
                                 echo "<td colspan='5' class='text-center py-4 text-muted'>Belum ada riwayat pengaduan yang diajukan.</td>";
                                 echo "</tr>";

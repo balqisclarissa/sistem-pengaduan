@@ -2,7 +2,6 @@
 session_start();
 include '../config/koneksi.php';
 
-// Menarik seluruh data pengaduan
 $pengaduan = mysqli_query($conn, "SELECT * FROM pengaduan ORDER BY id_pengaduan DESC");
 ?>
 
