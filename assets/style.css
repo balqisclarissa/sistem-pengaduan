@@ -1,0 +1,16 @@
+/* Konfigurasi UI Dasar */
+:root {
+    --bg-main: #f8f9fa;
+    --card-radius: 8px;
+}
+
+body {
+    background-color: var(--bg-main);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.card-custom {
+    border: none;
+    border-radius: var(--card-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
