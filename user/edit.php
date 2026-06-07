@@ -36,55 +36,63 @@ if (isset($_POST['submit'])) {
     );
 
     if ($update) {
-
         echo "<script>
             alert('Pengaduan berhasil diubah');
             window.location.href='data_pengaduan.php';
         </script>";
-
     } else {
-
         echo "<script>
             alert('Pengaduan gagal diubah');
         </script>";
-
     }
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
-    <title>Edit Pengaduan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Pengaduan | Sistem Pengaduan</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
-<body>
 
-    <h2>Edit Pengaduan</h2>
+<body class="bg-light">
 
-    <form method="POST">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
 
-        <label>Isi Pengaduan</label>
-        <br><br>
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h3 class="fw-bold" style="color: #1E3A8A;">Edit Pengaduan</h3>
+                </div>
 
-        <textarea
-            name="isi_pengaduan"
-            rows="5"
-            cols="50"
-            required><?= $data['isi_pengaduan']; ?></textarea>
+                <div class="card card-custom border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <form method="POST">
 
-        <br><br>
+                            <div class="mb-4">
+                                <label for="isi_pengaduan" class="form-label fw-bold">Isi Pengaduan (Instansi & Detail)</label>
+                                <textarea class="form-control" id="isi_pengaduan" name="isi_pengaduan" rows="6" required><?= htmlspecialchars($data['isi_pengaduan']); ?></textarea>
+                                <small class="text-muted">Anda dapat mengubah nama instansi maupun detail laporan secara langsung pada kotak di atas.</small>
+                            </div>
 
-        <button type="submit" name="submit">
-            Simpan Perubahan
-        </button>
+                            <div class="d-flex gap-2">
+                                <button type="submit" name="submit" class="btn btn-warning fw-bold px-4">Simpan Perubahan</button>
+                                <a href="data_pengaduan.php" class="btn btn-secondary px-4">Batal / Kembali</a>
+                            </div>
 
-        <button type="button"
-                onclick="window.location.href='data_pengaduan.php'">
-            Kembali
-        </button>
+                        </form>
+                    </div>
+                </div>
 
-    </form>
+            </div>
+        </div>
+    </div>
 
 </body>
+
 </html>
